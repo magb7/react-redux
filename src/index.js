@@ -5,10 +5,12 @@ import { Provider } from "react-redux";
 import "./index.css";
 import App from "./App";
 import lightReducer from "./reducers/lightReducer";
+import counterReducer from "./reducers/counterReducer";
 import * as serviceWorker from "./serviceWorker";
 
 const store = createStore(
   lightReducer,
+  counterReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
