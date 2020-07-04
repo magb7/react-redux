@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import CounterContainer from "./components/CounterContainer";
-import Navbar from "./components/Navbar";
+import Blog from "./components/Blog";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <CounterContainer />
+        <Blog />
       </div>
     );
   }
