@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import Blog from "./components/Blog";
+import ToDoList from "./pages/ToDoList";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Blog />
+        <ToDoList />
       </div>
     );
   }
