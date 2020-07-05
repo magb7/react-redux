@@ -10,10 +10,10 @@ export const addTodo = (content) => {
   };
 };
 
-export const toggleTodo = (id) => {
+export const toggleTodo = (index) => {
   return {
     type: "TOGGLE_TODO",
-    payload: { id },
+    payload: { index },
   };
 };
 
