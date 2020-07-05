@@ -18,8 +18,8 @@ const ToDoList = () => {
       <ListWrapper>
         <AddToDo />
         {todos.length ? (
-          todos.map((todo) => {
-            return <ToDo todo={todo} key={todo.id} />;
+          todos.map((todo, i) => {
+            return <ToDo todo={todo} key={i} />;
           })
         ) : (
           <p>No To Do !</p>
