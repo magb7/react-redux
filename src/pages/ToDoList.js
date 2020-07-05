@@ -7,7 +7,7 @@ import ToDo from "../components/ToDo";
 import AddToDo from "../components/AddToDo";
 
 const ToDoList = () => {
-  const todos = useSelector((state) => state.todoReducer.todos);
+  const todos = useSelector((state) => state.todoReducer);
 
   return (
     <>
@@ -19,13 +19,7 @@ const ToDoList = () => {
         <AddToDo />
         {todos.length ? (
           todos.map((todo) => {
-            return (
-              <ToDo
-                completed={todo.completed}
-                todo={todo.content}
-                key={todo.id}
-              />
-            );
+            return <ToDo todo={todo} key={todo.id} />;
           })
         ) : (
           <p>No To Do !</p>

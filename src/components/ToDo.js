@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const ToDo = ({ completed, todo, id }) => {
+const ToDo = ({ todo }) => {
   return (
-    <StyledList completed={completed}>
+    <StyledList completed={todo.logcompleted}>
       <li
         onClick={() => {
-          console.log(`toggle task ${id}`);
+          console.log(`toggle task ${todo.id}`);
         }}
       >
-        {todo}
+        {todo.content}
       </li>
       <button
         onClick={() => {
-          console.log(`delete task ${id}`);
+          console.log(`delete task ${todo.id}`);
         }}
       >
         Delete
