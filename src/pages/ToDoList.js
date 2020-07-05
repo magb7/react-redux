@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 //Components
 import ToDo from "../components/ToDo";
+import AddToDo from "../components/AddToDo";
 
 const ToDoList = () => {
   const todos = useSelector((state) => state.todoReducer.todos);
@@ -13,7 +14,9 @@ const ToDoList = () => {
       <Header>
         <h2>To Do</h2>
       </Header>
+
       <ListWrapper>
+        <AddToDo />
         {todos.length ? (
           todos.map((todo) => {
             return (
@@ -45,11 +48,11 @@ const Header = styled.header`
   }
 `;
 
-const ListWrapper = styled.div`
+const ListWrapper = styled.ul`
   display: flex;
   flex-flow: column wrap;
+  align-items: center;
   margin: 20px auto;
-  border: 1px solid black;
   width: 50vw;
   padding: 10px;
 `;
