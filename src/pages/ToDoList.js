@@ -19,7 +19,7 @@ const ToDoList = () => {
         <AddToDo />
         {todos.length ? (
           todos.map((todo, i) => {
-            return <ToDo todo={todo} key={i} />;
+            return <ToDo todo={todo} key={i} index={i} />;
           })
         ) : (
           <p>No To Do !</p>

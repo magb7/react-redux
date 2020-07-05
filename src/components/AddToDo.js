@@ -21,6 +21,7 @@ const AddToDo = () => {
         onClick={() => {
           console.log("add to do");
           dispatch(addTodo(value));
+          setValue("");
         }}
       >
         ADD

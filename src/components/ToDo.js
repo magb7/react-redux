@@ -1,16 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { toggleTodo } from "../redux/actions/todoActions";
 
-const ToDo = ({ todo }) => {
+const ToDo = ({ todo, index }) => {
+  const dispatch = useDispatch();
+
   return (
-    <StyledList completed={todo.logcompleted}>
-      <li
+    <StyledList completed={todo.completed}>
+      <p
         onClick={() => {
-          console.log(`toggle task ${todo.id}`);
+          console.log(`toggle task ${index}`);
+          dispatch(toggleTodo(index));
         }}
       >
         {todo.content}
-      </li>
+      </p>
       <button
         onClick={() => {
           console.log(`delete task ${todo.id}`);
@@ -22,7 +27,7 @@ const ToDo = ({ todo }) => {
   );
 };
 
-const StyledList = styled.div`
+const StyledList = styled.li`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -30,9 +35,9 @@ const StyledList = styled.div`
   width: 100%;
   border: 1px solid red;
   margin-bottom: 10px;
+  list-style: none;
 
-  li {
-    list-style: none;
+  p {
     text-decoration-line: ${(props) =>
       props.completed ? "line-through" : "none"};
   }
