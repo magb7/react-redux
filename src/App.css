@@ -12,10 +12,3 @@
   align-items: center;
   font-family: cursive;
 }
-
-button {
-  margin-top: 20px;
-  padding: 3px 5px;
-  border-radius: 5px;
-  outline: none;
-}
