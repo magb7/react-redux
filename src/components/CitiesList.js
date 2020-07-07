@@ -10,8 +10,6 @@ const CitiesList = () => {
     });
   }, []);
 
-  console.log(cities);
-
   return (
     <div>
       <ul>
