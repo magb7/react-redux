@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
-import CounterContainer from "./components/CounterContainer";
-import Navbar from "./components/Navbar";
+import CitiesList from "./components/CitiesList";
+import CitiesForm from "./components/CitiesForm";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <CounterContainer />
+        <CitiesList />
+        <CitiesForm />
       </div>
     );
   }
