@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import CitiesList from "./components/CitiesList";
-import CitiesForm from "./components/CitiesForm";
+import SignUp from "./components/SignUp";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <CitiesList />
-        <CitiesForm />
+        <SignUp />
       </div>
     );
   }
