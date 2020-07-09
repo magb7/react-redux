@@ -23,6 +23,8 @@ const SignUp = () => {
 
   return (
     <StyledWrapper>
+      <h2>Sign Up Form</h2>
+      <br />
       <form
         onSubmit={(e) => {
           handleSubmit(e);
