@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -83,8 +84,13 @@ const SignUp = () => {
           <input type="password" name="passwordbis" required />
         </label>
         <br />
-        <input type="submit" value="Submit" />
+        <Link to="/">
+          <input type="submit" value="Submit" />
+        </Link>
       </form>
+      <Link to="/signin">
+        <p>Sign In</p>
+      </Link>
     </StyledWrapper>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -54,8 +55,13 @@ const SignUp = () => {
           />
         </label>
         <br />
-        <input type="submit" value="Submit" />
+        <Link to="/profile">
+          <input type="submit" value="Submit" />
+        </Link>
       </form>
+      <Link to="/signup">
+        <p>Sign Up</p>
+      </Link>
     </StyledWrapper>
   );
 };
