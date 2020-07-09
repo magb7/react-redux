@@ -23,6 +23,11 @@ const SignUp = () => {
 
   return (
     <StyledWrapper>
+      <h3>{newUser.email}</h3>
+      <h3>{newUser.password}</h3>
+      <h3>{newUser.name}</h3>
+      <h3>{newUser.lastname}</h3>
+      <br />
       <form
         onSubmit={(e) => {
           handleSubmit(e);
