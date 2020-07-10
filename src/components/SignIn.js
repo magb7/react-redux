@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
+import { backend } from "../conf";
 
 const SignUp = () => {
   const [newConnection, setNewConnection] = useState({});
@@ -15,7 +16,7 @@ const SignUp = () => {
     e.preventDefault();
     console.log(newConnection);
     axios
-      .post(`http://localhost:5000/auth/signin`, newConnection)
+      .post(`${backend}/auth/signin`, newConnection)
       .then()
       .catch((err) => {
         console.log("Error:", err);
@@ -55,7 +56,12 @@ const SignUp = () => {
           />
         </label>
         <br />
-        <Link to="/profile">
+        <Link
+          to="/profile"
+          onClick={(e) => {
+            handleSubmit(e);
+          }}
+        >
           <input type="submit" value="Submit" />
         </Link>
       </form>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
+import { backend } from "../conf";
 
 const SignUp = () => {
   const [newUser, setNewUser] = useState({});
@@ -15,7 +16,7 @@ const SignUp = () => {
     e.preventDefault();
     console.log(newUser);
     axios
-      .post(`http://localhost:5000/auth/signup`, newUser)
+      .post(`${backend}/auth/signup`, newUser)
       .then()
       .catch((err) => {
         console.log("Error:", err);
@@ -84,7 +85,12 @@ const SignUp = () => {
           <input type="password" name="passwordbis" required />
         </label>
         <br />
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={(e) => {
+            handleSubmit(e);
+          }}
+        >
           <input type="submit" value="Submit" />
         </Link>
       </form>
