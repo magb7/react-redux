@@ -3,6 +3,19 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 import { backend } from "../conf";
+import { toast } from "react-toastify";
+
+const StyledWrapper = styled.div`
+  border: 1px solid purple;
+  margin: 30px;
+  display: flex;
+  flex-flow: column wrap;
+  width: 50vw;
+
+  input {
+    margin: 10px;
+  }
+`;
 
 const SignUp = () => {
   const [newUser, setNewUser] = useState({});
@@ -14,12 +27,29 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(newUser);
     axios
       .post(`${backend}/auth/signup`, newUser)
-      .then()
+      .then(() => {
+        toast.success("Successfully Sign Up", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      })
       .catch((err) => {
-        console.log("Error:", err);
+        toast.error("Problem while signing up", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
   };
 
@@ -80,11 +110,6 @@ const SignUp = () => {
           />
         </label>
         <br />
-        <label>
-          Password Bis :
-          <input type="password" name="passwordbis" required />
-        </label>
-        <br />
         <Link
           to="/"
           onClick={(e) => {
@@ -100,17 +125,5 @@ const SignUp = () => {
     </StyledWrapper>
   );
 };
-
-const StyledWrapper = styled.div`
-  border: 1px solid purple;
-  margin: 30px;
-  display: flex;
-  flex-flow: column wrap;
-  width: 50vw;
-
-  input {
-    margin: 10px;
-  }
-`;
 
 export default SignUp;

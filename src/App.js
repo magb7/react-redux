@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import { ToastContainer, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import SignUp from "./components/SignUp";
-import SignIn from "./components/SignIn";
+import SignUp from "./forms/SignUp";
+import SignIn from "./forms/SignIn";
 import Profile from "./components/Profile";
 
 class App extends Component {
@@ -16,6 +18,19 @@ class App extends Component {
           <Route path="/signup" component={SignUp} />
           <Route path="/profile" component={Profile} />
         </Switch>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          closeButton={false}
+          transition={Zoom}
+        />
       </div>
     );
   }
