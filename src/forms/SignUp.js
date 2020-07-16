@@ -40,7 +40,7 @@ const SignUp = () => {
           progress: undefined,
         });
       })
-      .catch((err) => {
+      .catch(() => {
         toast.error("Problem while signing up", {
           position: "bottom-right",
           autoClose: 5000,
@@ -110,16 +110,9 @@ const SignUp = () => {
           />
         </label>
         <br />
-        <Link
-          to="/"
-          onClick={(e) => {
-            handleSubmit(e);
-          }}
-        >
-          <input type="submit" value="Submit" />
-        </Link>
+        <input type="submit" value="Submit" />
       </form>
-      <Link to="/signin">
+      <Link to="/">
         <p>Sign In</p>
       </Link>
     </StyledWrapper>

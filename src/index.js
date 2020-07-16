@@ -5,11 +5,11 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import counterReducer from "./reducers/counterReducer";
+import userReducer from "./reducers/userReducer";
 import * as serviceWorker from "./serviceWorker";
 
 const store = createStore(
-  counterReducer,
+  userReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

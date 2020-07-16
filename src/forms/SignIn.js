@@ -56,14 +56,7 @@ const SignUp = () => {
           />
         </label>
         <br />
-        <Link
-          to="/profile"
-          onClick={(e) => {
-            handleSubmit(e);
-          }}
-        >
-          <input type="submit" value="Submit" />
-        </Link>
+        <input type="submit" value="Submit" />
       </form>
       <Link to="/signup">
         <p>Sign Up</p>
